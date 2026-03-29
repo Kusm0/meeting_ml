@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Trained models (large files)
+models/tfidf/*/
+models/bert/*/
+*.pkl
+*.pt
+*.pth
+*.bin
+
+# Metrics and plots
+metrics/tfidf/*/
+metrics/bert/*/
+
+# Data
+data/processed/
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,41 @@
+services:
+  ml-service:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: meeting-ml-service
+    ports:
+      - "8001:8000"  # FastAPI
+      - "7861:7860"  # Gradio
+    volumes:
+      # Persistent storage for models
+      - ../models:/app/models
+      # Persistent storage for metrics
+      - ../metrics:/app/metrics
+      # Access to dataset (mount parent datasets folder)
+      - ../../datasets:/app/datasets:ro
+      # Mount data directory
+      - ../data:/app/data
+      # Checkpoints directory
+      - ../checkpoints:/app/checkpoints
+    environment:
+      - PYTHONPATH=/app
+      - GRADIO_SERVER_NAME=0.0.0.0
+      - GRADIO_SERVER_PORT=7860
+    restart: unless-stopped
+    # Memory limits for BERT training on CPU
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          memory: 4G
+    # GPU support (uncomment if using GPU)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+

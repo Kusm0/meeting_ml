@@ -1,0 +1,70 @@
+# --- Проєкт: лише код + meeting_ml_service (без датасетів, md, ваг, метрик) ---
+
+# Датасети та сирі дані
+datasets/
+meeting_ml_service/datasets/
+*.csv
+*.jsonl
+*.parquet
+
+# Документація Markdown
+*.md
+
+# Інший підпроєкт з власним .git
+MeetingBank-utils/
+
+# Ваги, чекпойнти, серіалізовані моделі
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.h5
+*.onnx
+*.pkl
+*.joblib
+*.pickle
+
+# Результати тренувань, метрики, логи експериментів
+meeting_ml_service/metrics/
+**/wandb/
+**/runs/
+**/lightning_logs/
+**/outputs/
+**/checkpoints/
+tensorboard/
+mlruns/
+
+# Збережені моделі (конфіги токенізаторів разом із вагами — не комітимо)
+meeting_ml_service/models/
+
+# Python / середовище
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.env
+.env.*
+!.env.example
+
+# IDE / ОС
+.idea/
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# Логи
+logs/
+*.log
+
+# Jupyter (кеш; самі .ipynb у datasets/ уже виключені разом із datasets/)
+.ipynb_checkpoints/
+
+# Архіви
+*.zip
+*.tar
+*.tar.gz
+*.7z
