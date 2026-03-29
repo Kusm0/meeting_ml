@@ -7,9 +7,9 @@ meeting_ml_service/datasets/
 *.jsonl
 *.parquet
 
-# Документація Markdown (кореневий README — у репозиторії)
+# Документація Markdown (лише кореневий README у репозиторії)
 *.md
-!README.md
+!/README.md
 
 # Інший підпроєкт з власним .git
 MeetingBank-utils/
